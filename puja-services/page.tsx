@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BookingForm } from "@/components/BookingForm";
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -9,9 +8,9 @@ export default function PujaServicesPage() {
     <>
       <section className="bg-orange-600 py-20 text-white">
         <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-orange-100">Puja Services</p>
-          <h1 className="mt-3 text-4xl font-bold md:text-5xl">Traditional Ritual Services For Every Sacred Occasion</h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-orange-50">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-orange-100 sm:text-sm sm:tracking-[0.28em]">Puja Services</p>
+          <h1 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">Traditional Ritual Services For Every Sacred Occasion</h1>
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-orange-50 sm:text-base sm:leading-8">
             A warm, sectioned service page inspired by traditional purohit websites, presented in a more spacious and modern card-driven layout.
           </p>
         </Container>
@@ -30,18 +29,16 @@ export default function PujaServicesPage() {
               className="grid gap-8 rounded-[2rem] border border-orange-100 bg-white p-6 shadow-soft lg:grid-cols-[0.9fr_1.1fr] lg:p-8"
             >
               <div className="overflow-hidden rounded-[1.5rem]">
-                <Image
+                <img
                   src={service.image}
                   alt={service.title}
-                  width={640}
-                  height={420}
-                  className="h-full w-full object-cover"
+                  className="aspect-[4/3] h-full w-full rounded-xl object-cover"
                 />
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-stone-900">{service.title}</h2>
-                <p className="mt-4 text-base leading-8 text-stone-600">{service.description}</p>
-                <p className="mt-4 text-base leading-8 text-stone-600">
+                <h2 className="text-2xl font-bold text-stone-900 sm:text-3xl">{service.title}</h2>
+                <p className="mt-4 text-sm leading-7 text-stone-600 sm:text-base sm:leading-8">{service.description}</p>
+                <p className="mt-4 text-sm leading-7 text-stone-600 sm:text-base sm:leading-8">
                   This section is intentionally styled like an informative service article so visitors can understand the meaning, timing, and value of each puja before they reach out. The layout is static, lightweight, and ready for future CMS integration if needed.
                 </p>
               </div>

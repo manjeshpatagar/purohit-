@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <TopBar />
         <Navbar />
-        <main>{children}</main>
+        <main className="overflow-x-hidden pb-24 md:pb-0">{children}</main>
         <Footer />
         <FloatingActions />
       </body>

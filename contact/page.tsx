@@ -2,7 +2,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { Container } from "@/components/Container";
 import { FAQ } from "@/components/FAQ";
 import { SectionTitle } from "@/components/SectionTitle";
-import { contactDetails } from "@/lib/data";
+import { contactDetails, imageLibrary } from "@/lib/data";
 
 export default function ContactPage() {
   return (
@@ -23,9 +23,11 @@ export default function ContactPage() {
                 <p><span className="font-semibold text-stone-900">Address:</span> {contactDetails.address}</p>
               </div>
               <div className="mt-8 rounded-[1.5rem] border border-dashed border-orange-200 bg-white p-5">
-                <div className="flex h-64 items-center justify-center rounded-[1rem] bg-gray-100 text-stone-500">
-                  Map Placeholder
-                </div>
+                <img
+                  src={imageLibrary.contactBackground}
+                  alt="Temple background"
+                  className="h-64 w-full rounded-xl object-cover"
+                />
               </div>
             </div>
             <div>

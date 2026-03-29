@@ -9,7 +9,7 @@ import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ServicesSection } from "@/components/ServicesSection";
 import { Testimonials } from "@/components/Testimonials";
-import { areas, trustLogos } from "@/lib/data";
+import { areas, imageLibrary, trustLogos } from "@/lib/data";
 
 export default function HomePage() {
   return (
@@ -21,7 +21,7 @@ export default function HomePage() {
         title="Guided Bengali Rituals For Homes And Families"
         subtitle="A calm and reassuring approach for every sacred occasion."
         body="This website demo is designed around the familiar layout of a Bengali purohit service portal, refreshed with cleaner spacing, strong typography, and responsive sections. Families can quickly understand the rituals offered, the service coverage, and how to make contact for bookings."
-        image="/images/about-main.svg"
+        image={imageLibrary.about}
         imageAlt="About the purohit"
         buttonLabel="About Me"
         buttonHref="/about"
@@ -39,7 +39,7 @@ export default function HomePage() {
             {trustLogos.map((logo) => (
               <div
                 key={logo}
-                className="flex items-center justify-center rounded-[1.5rem] border border-orange-100 bg-brand.surface px-6 py-8 text-2xl font-semibold text-stone-700 shadow-md"
+                className="flex items-center justify-center rounded-[1.5rem] border border-orange-100 bg-brand.surface px-4 py-6 text-xl font-semibold text-stone-700 shadow-md sm:px-6 sm:py-8 sm:text-2xl"
               >
                 {logo}
               </div>
@@ -69,7 +69,7 @@ export default function HomePage() {
         title="A Traditional Service Website Feel, Refined For Today"
         subtitle="Short introduction section with image and concise supporting copy."
         body="The visual direction uses saffron, amber, and warm stone tones to retain the spiritual-service identity while improving readability and responsiveness. The structure stays familiar, but the interface feels more polished and modern."
-        image="/images/about-short.svg"
+        image={imageLibrary.aboutShort}
         imageAlt="Short about"
         reverse
       />
@@ -86,7 +86,7 @@ export default function HomePage() {
             {areas.map((area) => (
               <div
                 key={area}
-                className="rounded-2xl border border-orange-100 bg-brand.surface px-5 py-5 text-center font-medium text-stone-700 shadow-md"
+                className="rounded-2xl border border-orange-100 bg-brand.surface px-4 py-4 text-center text-sm font-medium text-stone-700 shadow-md sm:px-5 sm:py-5 sm:text-base"
               >
                 {area}
               </div>
