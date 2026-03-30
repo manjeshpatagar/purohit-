@@ -1,29 +1,15 @@
-"use client";
+import type { Metadata } from "next";
+import { PujaGuidePageClient } from "./PujaGuidePageClient";
 
-import { BlogCard } from "@/components/BlogCard";
-import { Container } from "@/components/Container";
-import { useLanguage } from "@/components/LanguageProvider";
-import { SectionTitle } from "@/components/SectionTitle";
-import { blogs } from "@/lib/data";
+export const metadata: Metadata = {
+  title: "Puja Guide | Gokarna Pandit",
+  description:
+    "Read simple guides for Griha Pravesh, Satyanarayana Pooja, Shraddha, and other rituals by Gokarna Pandit serving Uttara Kannada.",
+  alternates: {
+    canonical: "/puja-guide",
+  },
+};
 
 export default function PujaGuidePage() {
-  const { t } = useLanguage();
-
-  return (
-    <section className="bg-gray-50 py-16">
-      <Container>
-        <SectionTitle
-          eyebrow={t.navLinks[1].label}
-          title={t.pujaGuidePage.title}
-          subtitle={t.pujaGuidePage.subtitle}
-          align="center"
-        />
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {blogs.map((blog, index) => (
-            <BlogCard key={blog.title} image={blog.image} {...t.blogsData[index]} />
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
+  return <PujaGuidePageClient />;
 }
