@@ -1,21 +1,26 @@
+"use client";
+
 import { BlogCard } from "@/components/BlogCard";
 import { Container } from "@/components/Container";
+import { useLanguage } from "@/components/LanguageProvider";
 import { SectionTitle } from "@/components/SectionTitle";
 import { blogs } from "@/lib/data";
 
 export default function PujaGuidePage() {
+  const { t } = useLanguage();
+
   return (
     <section className="bg-gray-50 py-16">
       <Container>
         <SectionTitle
-          eyebrow="Puja Guide"
-          title="Helpful Articles For Common Ritual Questions"
-          subtitle="A blog-style guide page with clean cards, imagery, shadow depth, and a three-column responsive layout."
+          eyebrow={t.navLinks[1].label}
+          title={t.pujaGuidePage.title}
+          subtitle={t.pujaGuidePage.subtitle}
           align="center"
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {blogs.map((blog) => (
-            <BlogCard key={blog.title} {...blog} />
+          {blogs.map((blog, index) => (
+            <BlogCard key={blog.title} image={blog.image} {...t.blogsData[index]} />
           ))}
         </div>
       </Container>
